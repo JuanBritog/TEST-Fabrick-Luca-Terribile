@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "7b5e0aa3-e8fd-4683-ad29-343008f87916",
+		"name": "Test Fabrick",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "local - account balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-Schema",
+						"value": "S2S",
+						"type": "text"
+					},
+					{
+						"key": "Api-Key",
+						"value": "FXOVVXXHVCPVPBZXIJOBGUGSKHDNFRRQJP",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/v1/account/balance/14537780",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account",
+						"balance",
+						"14537780"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "local - money transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-Schema",
+						"value": "S2S",
+						"type": "text"
+					},
+					{
+						"key": "Api-Key",
+						"value": "FXOVVXXHVCPVPBZXIJOBGUGSKHDNFRRQJP",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"creditor\": {\n    \"name\": \"John Doe\",\n    \"account\": {\n      \"accountCode\": \"IT23A0336844430152923804660\",\n      \"bicCode\": \"SELBIT2BXXX\"\n    },\n    \"address\": {\n      \"address\": null,\n      \"city\": null,\n      \"countryCode\": null\n    }\n  },\n  \"executionDate\": \"2019-04-01\",\n  \"uri\": \"REMITTANCE_INFORMATION\",\n  \"description\": \"Payment invoice 75/2017\",\n  \"amount\": 800,\n  \"currency\": \"EUR\",\n  \"isUrgent\": false,\n  \"isInstant\": false,\n  \"feeType\": \"SHA\",\n  \"feeAccountId\": \"45685475\",\n  \"taxRelief\": {\n    \"taxReliefId\": \"L449\",\n    \"isCondoUpgrade\": false,\n    \"creditorFiscalCode\": \"56258745832\",\n    \"beneficiaryType\": \"NATURAL_PERSON\",\n    \"naturalPersonBeneficiary\": {\n      \"fiscalCode1\": \"MRLFNC81L04A859L\",\n      \"fiscalCode2\": null,\n      \"fiscalCode3\": null,\n      \"fiscalCode4\": null,\n      \"fiscalCode5\": null\n    },\n    \"legalPersonBeneficiary\": {\n      \"fiscalCode\": null,\n      \"legalRepresentativeFiscalCode\": null\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/account/transfer/14537780",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account",
+						"transfer",
+						"14537780"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "local - account transaction",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-Schema",
+						"value": "S2S",
+						"type": "text"
+					},
+					{
+						"key": "Api-Key",
+						"value": "FXOVVXXHVCPVPBZXIJOBGUGSKHDNFRRQJP",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/v1/account/balance/14537780/transactions/2022-04-01/2022-12-01",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account",
+						"balance",
+						"14537780",
+						"transactions",
+						"2022-04-01",
+						"2022-12-01"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
